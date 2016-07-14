@@ -7,6 +7,9 @@ public class Player {
 	private final String name;
 	private final  int age;
 	private final String sex;
+	private Player opponent;
+	private Cards teste;
+	private boolean isWinner = false;
 	
 	Player(String name,int age,String sex){
 		Scanner sc = new Scanner(System.in);
@@ -42,5 +45,14 @@ public class Player {
 		}
 	}
 	
+	void setOpponent(Player opponent){
+		if(opponent.equals(this)){
+			System.out.println("You can't play with yourself");
+			return;
+		}
+		else{
+			this.opponent = opponent;
+		}
+	}
 
 }
